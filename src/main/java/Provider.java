@@ -41,4 +41,12 @@ public class Provider {
       .getKey();
     }
   }
+  public static List<Provider> speciality() {
+    String sql = "SELECT speciality, name FROM providers";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Provider.class);
+    }
+  }
+
+  
 }

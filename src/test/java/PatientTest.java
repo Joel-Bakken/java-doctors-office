@@ -9,15 +9,28 @@ public class PatientTest {
 
   @Test
   public void patient_instantiatesCorrectly_true() {
-    Patient testPatient = new Patient("Bob");
+    Patient testPatient = new Patient("", 1, 2);
     assertEquals(true, testPatient instanceof Patient);
   }
 
   @Test
-  public void patient_instantiatesWithName_bob() {
-    Patient testPatient = new Patient("Bob");
-    assertEquals("Bob", testPatient.getName());
+  public void getName_instantiatesWithName_joel() {
+    Patient testPatient = new Patient("Joel", 1, 2);
+    assertEquals("Joel", testPatient.getName());
   }
 
+  @Test
+  public void patient_instantiatesWithDOB_1_1_17() {
+    Patient testPatient = new Patient("Joel", 1, 2);
+    assertEquals(1, testPatient.getDOB());
+  }
+
+  @Test
+  public void save_assignsIdToObject() {
+    Patient testPatient = new Patient("", 1, 2);
+    testPatient.save();
+    Patient savedPatient = Patient.all().get(0);
+    assertEquals(testPatient.getId(), savedPatient.getId());
+  }
 
 }
