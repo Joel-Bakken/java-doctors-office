@@ -21,9 +21,9 @@ public class ProviderTest {
     }
 
   @Test
-    public void getSpeciality_providerHasASpeciality_rheumatology() {
+    public void getSpecialty_providerHasASpecialty_rheumatology() {
     Provider testProvider = new Provider("", "Rheumatology", 1);
-    assertEquals("Rheumatology", testProvider.getSpeciality());
+    assertEquals("Rheumatology", testProvider.getSpecialty());
     }
 
   @Test

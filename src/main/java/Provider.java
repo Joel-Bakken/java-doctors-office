@@ -4,13 +4,13 @@ import org.sql2o.*;
 
 public class Provider {
   private String name;
-  private String speciality;
+  private String specialty;
   private int id;
 
 
-  public Provider(String name, String speciality, int id) {
+  public Provider(String name, String specialty, int id) {
       this.name = name;
-      this.speciality = speciality;
+      this.specialty = specialty;
       this.id = id;
     }
 
@@ -24,8 +24,8 @@ public class Provider {
       return con.createQuery(sql).executeAndFetch(Provider.class);
     }
   }
-  public String getSpeciality() {
-    return speciality;
+  public String getSpecialty() {
+    return specialty;
   }
 
   public int getId() {
@@ -41,12 +41,12 @@ public class Provider {
       .getKey();
     }
   }
-  public static List<Provider> speciality() {
-    String sql = "SELECT speciality, name FROM providers";
+  public static List<Provider> specialty() {
+    String sql = "SELECT specialty, name FROM providers";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql).executeAndFetch(Provider.class);
     }
   }
 
-  
+
 }
