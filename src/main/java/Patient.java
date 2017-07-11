@@ -11,6 +11,7 @@ public class Patient {
     this.name = name;
     this.dob = dob;
     this.id = id;
+    this.providersId = providersId;
   }
 
   public String getName() {
